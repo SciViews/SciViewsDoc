@@ -1,4 +1,9 @@
-# Functions for the SciViews::R Quarto book
+# Base R language for SciViews::R
+# to be sourced in 'SciViews:R'
+# by Ph. Grosjean (2023)
+
+
+# Functions for the SciViews::R Quarto book -------------------------------
 
 # Read the csv file that contains correspondence of functions SciViews::R <-> R
 fn_read <- function() {
@@ -42,14 +47,19 @@ fn_list <- function(svr, r = svr, cat = "", comment = "Same syntax") {
   paste0("`", svr, "`")
 }
 
-################################################################################
+
+# SciViews::R aka functions -----------------------------------------------
 
 aka <- svMisc::aka
 
+all_equal <- aka(base::all.equal)
+all_names <- aka(base::all.names)
+all_vars <- aka(base::all.vars)
+arr_split <- aka(base::asplit)
+mat_split <- aka(base::asplit)
+attr_all_equal <- aka(base::attr.all.equal)
 pmin_int <- aka(base::pmin.int)
 pmax_int <- aka(base::pmax.int)
-all_equal <- aka(base::all.equal)
-attr_all_equal <- aka(base::attr.all.equal)
 is_true <- aka(base::isTRUE)
 is_false <- aka(base::isFALSE)
 # No, should be vectorized... where is this defined?

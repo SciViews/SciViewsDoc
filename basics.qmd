@@ -1,7 +1,8 @@
 # Basics
 
 ```{r, include=FALSE}
-source("functions.R")
+if (!"SciViews:R" %in% search())
+  source("R/SciViews.R", attach(NULL, name = "SciViews:R"))
 ```
 
 R provides a rich working environment with lot of tools. In order to get everything organised and easier to manage, most features are provided through **functions**. Installable ensembles of function, data sets, documentation and examples are called R **packages**. At a higher organisational level, SciViews::R provides **sets** (a series of related functions) and **units** (a remix of the content of one or more packages).

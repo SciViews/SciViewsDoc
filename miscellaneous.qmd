@@ -1,0 +1,164 @@
+# Miscellaneous
+
+This section contains various material (mostly work in progress) that is not yet incorporated in other sections of this book.
+
+## Temporary "aka" function for SciViews::R
+
+One of the goals of SciViews::R is to provide a consistent naming convention based on snake case. R is quite liberal on the way function should be named. Consequently, almost all the possible conventions are used (snake_case, camelCase, PascalCase, .dotcane, lowercase...) It is not easy to remember the name of function in this context. SciViews::R tries to put that in order by generalizing snake_case, which implies the creation of a lot os synonym names for existing R functions, or "aka"s. These "aka"s are collected together in a script like this one :
+
+```{r SciViewsR, eval=FALSE}
+# Base R language for SciViews::R
+# to be sourced in 'SciViews:R'
+# by Ph. Grosjean (2023)
+aka <- svMisc::aka
+all_equal <- aka(base::all.equal)
+all_names <- aka(base::all.names)
+all_vars <- aka(base::all.vars)
+arr_split <- aka(base::asplit)
+mat_split <- aka(base::asplit)
+# ... continue with B-Z
+```
+
+Assuming this file is located in `R/SciViews.R`, it could be sourced into the search path in a way it does not clutters the global environment with something like this (and this code also prevents sourcing it twice) :
+
+```{r SciViewsRsource, eval=FALSE}
+if (!"SciViews:R" %in% search())
+  source("R/SciViews.R", attach(NULL, name = "SciViews:R"))
+```
+
+This mechanism is used in this book (and it also loads a bunch of additional functions specific to the book).
+
+## Speedy functions as alternative to the tidyverse DSL
+
+The tidyselect mechanism extends the selection of variables in a data frame beyond base R. However, it is only restricted to tidy functions ans it uses non standard evaluation. Here we design a similar interface, but that is useable everywhere and that use standard evaluation (you have to quote names).
+
+TODO : the following chunk must be sorted out !
+
+```{r}
+# i() returns indices and nm() returns names
+# With this version, you are not obliged to quote names yet
+fselect <- collapse::fselect
+i <- function(.data, ..., .return = "indices") {
+  fselect(.data, ..., return = .return)
+}
+
+nm <- function(data, ...) {
+  fselect(data, ..., return = "names")
+}
+
+nn <- function(x) as.symbol(x)
+nn('Species')
+
+# This is a trial to indicate a range of names in a data frame.
+# However, it cannot use standard evaluation and it is tied to the . object
+`%:%` <- function(e1, e2) {
+  n <- names(.)
+  v <- 1:length(n)
+  names(v) <- n
+  from <- v[e1]
+  to <- v[e2]
+  n[from:to]
+}
+
+# Example
+.= iris
+i(., 'Petal.Length', 'Sepal.Length') # Returns the indices
+nm(., 'Petal.Length', 'Sepal.Length') # Returns the names (not much useful)
+nm(., 3, 1) # More useful
+
+# The good point with standard evaluation is that we can do something like this:
+myvar <- 'Sepal.Length'
+i(., 'Species', myvar)
+
+# To return a range, like in dplyr
+dplyr::select(iris, Species:Petal.Length, Sepal.Length)
+# or mixing ranges and single names
+dplyr::select(iris, Species:Petal.Length, 'Sepal.Length')
+
+i(., 'Sepal.Length') %:% 'Petal.Length'
+# ... or in inverse order
+i(., 'Species') %:% 'Petal.Length'
+
+# It would be better to allow something like this (but non standard eval required):
+#i(., 'Species':'Petal.Length', 'Sepal.Length')
+# With stand evaluation, the best one could do is something like this:
+#. %i% 'Species' %:% 'Peta.Length' + 'Sepal.Length'
+
+# This works in non standad evaluation because we use fselect()
+i(., Species:Petal.Length, Sepal.Length)
+# May be something like this?
+#i(., ~'Species':'Petal.Length', 'Sepal.Length')
+# Another idea with formulas, which we accept too
+ff <- function(data, ...) list(...)
+ll <- ff(iris, ~Species:Petal.Length, ~Sepal.Length)
+lapply(ll, function(x) if (rlang::is_formula(x)) rlang::f_rhs(x) else x)
+
+# Alternate (non standard) syntax:
+ii <- function(data, expr){
+  #Species <- 5
+  #Petal.Length <- 3
+  #do.call(fselect, list(str2lang(expr), return = "indices"))
+  call("fselect", as.symbol('data'), str2lang(expr), return = "indices") |> eval()
+}
+ii(., 'Species:Petal.Length')
+
+# Yet another idea:
+f_rhs <- rlang::f_rhs
+#get_vars <- collapse::get_vars
+#i_f <- function(data, f) {
+#  eval(as.call(list('fselect', 'data', f_rhs(f), return = "indices")))
+#}
+i_f <- function(data, f) {
+  eval(call('fselect', data, f[[2]], return = "indices"))
+}
+nm_f <- function(data, f) {
+  eval(call('fselect', data, f[[2]], return = "names"))
+}
+
+iselect <- function(data, ...)
+  fselect(data, ..., return = "indices")
+i <- function(f) {
+  f[[1]] <- as.symbol('iselect')
+  eval(f)
+}
+i(iris ~ c(Species:Petal.Length, Sepal.Length))
+# No: i(iris ~ c('Species:Petal.Length', 'Sepal.Length'))
+
+microbenchmark::microbenchmark(i(iris ~ c(Species:Petal.Length, Sepal.Length)))
+
+i_f(iris, ~ c(Species:Petal.Length, Sepal.Length))
+nm_f(iris, ~ c(Species:Petal.Length, Sepal.Length))
+microbenchmark::microbenchmark(i_f(iris, ~ c(Species:Petal.Length, Sepal.Length)))
+microbenchmark::microbenchmark(i_f(iris, ~ Species:Petal.Length))
+
+#eval(lazyeval::f_eval(~i_f(., Species:Petal.Length)))
+
+#microbenchmark::microbenchmark(lazyeval::f_eval(~i(., Species:Petal.Length)))
+
+microbenchmark::microbenchmark(ii(., 'Species:Petal.Length'))
+
+# Using speedy select on matrices
+m <- matrix(1:6, nrow = 2)
+m
+# One can give names to row, cols and each item
+rownames(m) <- LETTERS[1:2]
+rownames(m)
+colnames(m) <- letters[1:3]
+colnames(m)
+names(m) <- paste0("v", 1:6)
+names(m)
+m
+
+dimnames(m)
+dimnames(m)[[1]]
+
+# ... but it does not work yet!
+#nm(m, 'a', 'c')
+
+# This works as base R
+m[4]
+m[2, 2]
+m["v4"]
+m[["v4"]]
+m["B", "b"]
+```

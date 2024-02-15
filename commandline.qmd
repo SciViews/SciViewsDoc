@@ -1,7 +1,8 @@
 # Command line
 
 ```{r, include=FALSE}
-source("functions.R")
+if (!"SciViews:R" %in% search())
+  source("R/SciViews.R", attach(NULL, name = "SciViews:R"))
 ```
 
 R can be used in different way, but it is generally used interactively at the **command line**. Being in Rgui (Windows), R.app (MacOS), a terminal, RStudio, VScode, ... you can interact with an R process in a question and answer way. R shows that it is ready to process next instruction by a **prompt** at the beginning of a line (\>). You enter the instruction on one or several lines. In this case, the prompt changes into (+) to show that R waits for more. Once the instruction is complete, it is processed by R and the result is printed in the console, or has side-effects, like creating a plot, for instance. Then R goes back to the prompt and is ready for next instruction.

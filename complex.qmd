@@ -1,7 +1,8 @@
 # Complex numbers
 
 ```{r, include=FALSE}
-source("functions.R")
+if (!"SciViews:R" %in% search())
+  source("R/SciViews.R", attach(NULL, name = "SciViews:R"))
 ```
 
 Complex numbers are not very often used in statistics, but R provides the **complex** class and a series of functions to manipulate it, just in case you would need it.

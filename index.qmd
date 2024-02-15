@@ -3,6 +3,7 @@
 This book presents SciViews::R, an R dialect that is intended to make the R language more accessible.
 
 ```{r, include=FALSE}
-source("functions.R")
+if (!"SciViews:R" %in% search())
+  source("R/SciViews.R", attach(NULL, name = "SciViews:R"))
 fn_clear()
 ```

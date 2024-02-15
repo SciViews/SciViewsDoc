@@ -14,6 +14,7 @@ book:
     - math.qmd
     - logical.qmd
     - complex.qmd
+    - miscellaneous.qmd
     - references.qmd
 
 bibliography: references.bib
