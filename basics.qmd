@@ -1,0 +1,96 @@
+# Basics
+
+```{r, include=FALSE}
+source("functions.R")
+```
+
+R provides a rich working environment with lot of tools. In order to get everything organised and easier to manage, most features are provided through **functions**. Installable ensembles of function, data sets, documentation and examples are called R **packages**. At a higher organisational level, SciViews::R provides **sets** (a series of related functions) and **units** (a remix of the content of one or more packages).
+
+## Functions
+
+function
+
+:   A function in computer language performs one task in a separate unit of code. A function accepts zero or more **arguments** that passes variables and parameters and usually returns one object as a result. Most functions have no **side-effect**, that is, they modifies nothing in your computing environment. Some do, however, like printing a result, drawing a chart, changing a global option, writing in a file, ...
+
+functional language
+
+:   A computing language that relies on functions to organize its code by applying and composing them.
+
+A call to a function consist in its symbol, followed by parentheses, and arguments provided inside these parentheses.
+
+The *definition* of the function can be see with `args(<function_name>)` :
+
+![](figures/functions_arguments1_drawio){fig-align="left"}
+
+The *call* of the function in R code can specify arguments *by position* or *by their name*:
+
+![](figures/functions_arguments2_drawio)
+
+For instance, the variance of a numeric vector is computed by the `var()` function like this:
+
+```{r}
+x <- c(1, 4, 3.2, 6.3)
+var(x)
+```
+
+Here, we provided one argument to `var()` : `x` , the numeric vector. The `var()` function has more arguments. One get a tip in RStudio, or VSCode, or one can rely on `args()` to see these arguments, or display the help page with `?var` to get even more information.
+
+```{r}
+args(var)
+```
+
+Also, running just `var` without parentheses prints the code of the function.
+
+**Recurrent pattern:** a function uses a data frame and a formula. Often, the argument matching the formula is the first one. However, it is more logical to indicate data first. It can be done with a named argument:
+
+![](figures/functions_data_formula_drawio)
+
+When using the pipe operator `|>` with R \>= 4.2.0, one can use `data = _` . Here is a linear model using `lm()` that way:
+
+```{r}
+mtcars |>
+  lm(data = _, mpg ~ hp + cyl)
+```
+
+The **Call:** in the output shows arguments are correctly interpreted, including the formula as first argument of `lm()`.
+
+generic function
+
+:   A generic function, or just "generic" is a function that runs different code depending on the **class** of one or more of its arguments (but usually, of the first argument).
+
+method
+
+:   A function that implements the code of a generic for one particular class. There may be also a **default** method that applies if no specific method is found for the generic
+
+dispatching
+
+:   The selection of the right method given the context (call to a generic with argument(s) of given class(es)
+
+Example: the average of a vector of numeric values is calculated by the `mean()` function. But `mean()` is generic. So, using `args()` , or printing its code does not give much information:
+
+```{r}
+args(mean)
+mean
+```
+
+Here, we see that besides its first argument named `x` , there is a variable set of additional arguments materialized by the three dots `…` In fact the actual arguments depends on the class of `x` . The code is limited to `UseMethod("mean")`, which indicate to dispatch on "mean" for the first argument.
+
+-   `r fn_list("methods()", "base::methods()", "object")` lists all known methods for a generic
+
+```{r}
+methods(mean)
+```
+
+We see that there is **default** method, as well as a series of others. Those with an asterisk (\*) are hidden and not directly accessible.
+
+-   `r fn_list("get_s3_methods()", "base::getS3methods()", "object")` gets the code for a given S3 method (S3 is a type of R objects, see the objects chapter)
+
+```{r}
+get_s3_method('mean', 'default')
+```
+
+## Packages
+
+## Sets
+
+## Units

@@ -1,0 +1,8 @@
+# Preface {.unnumbered}
+
+This book presents SciViews::R, an R dialect that is intended to make the R language more accessible.
+
+```{r, include=FALSE}
+source("functions.R")
+fn_clear()
+```

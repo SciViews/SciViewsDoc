@@ -1,0 +1,31 @@
+project:
+  type: book
+
+book:
+  title: "SciViews::R"
+  author: "Philippe Grosjean"
+  date: "2023-07-25"
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - summary.qmd
+    - commandline.qmd
+    - basics.qmd
+    - math.qmd
+    - logical.qmd
+    - complex.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+    default-image-extension: svg
+  pdf:
+    documentclass: scrreprt
+    papersize: A4
+    default-image-extension: pdf
+
+editor: visual
+

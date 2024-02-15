@@ -1,0 +1,111 @@
+# Math and numbers
+
+```{r, include=FALSE}
+source("functions.R")
+```
+
+Math operations are crucial for statistical computing. The way you do math in R is relatively classical, except that you work on **vectors**. Numbers are represented either by **integer**s or by **double**s (which are floating point numbers representing reals). They are both **numeric** objects.
+
+## Main math operators
+
+-   `r fn_list("+", "+", "math", "addition (binary or unary)")` the addition operator or the unary pls sign in front of a number like +3
+
+-   `r fn_list("-", "-", "math", "subtraction (binary or unary)")` the subtraction operator, or the unary minus sign before a number, like -3
+
+-   `r fn_list("*", "*", "math")` the multiplication operator
+
+-   `r fn_list("/", "/", "math")` the division operator
+
+-   `r fn_list("^", "^", "math")` the exponent operator
+
+-   `r fn_list("%/%", "%/%", "math")` the integer division and the remainder of an integer division `r fn_list("%%", "%%", "math")`
+
+-   `r fn_list("%*%", "%*%", "math")` the matrix multiplication operator
+
+## Rounding numbers
+
+-   `r fn_list("abs()", "base::abs()", "math")` the absolute value
+
+-   `r fn_list("sign()", "base::sign()", "math")` the sign of number(s)
+
+-   `r fn_list("sqrt()", "base::sqrt()", "math")` the square root (to be used in preference to `x^.5`)
+
+-   `r fn_list("round()", "base::round()", "math")` to round number(s) to a given number of digits
+
+-   `r fn_list("floor()", "base::floor()", "math")` rounds towards the largest integer(s) not larger the number(s)
+
+-   `r fn_list("ceiling()", "base::ceiling()", "math")` rounds towards the smallest integer(s) not smaller than the number(s)
+
+-   `r fn_list("trunc()", "base::trunc()", "math")` truncates the decimal part of the number
+
+-   `r fn_list("signif()", "base::signif()", "math")` rounds to a certain number of significant digits
+
+## Logarithms and exponentials
+
+-   `r fn_list("exp()", "base::exp()", "math")` is the exponential function
+
+-   `r fn_list("log()", "base::log()", "math")` computes a logarithm (you can indicate the base, but by default, it is the natural logarithm), you can also use `r fn_list("logb()", "base::logb()", "math")` to insist on a specific base for the logarithm
+
+-   `r fn_list("log10()", "base::log10()", "math")` computes the base 10 logarithm
+
+-   `r fn_list("log2()", "base::log2()", "math")` computes the base 2 logarithm
+
+-   `r fn_list("log1p()", "base::log1p()", "math")` computes $log(x + 1)$ accurately, including for $|x| << 1$.
+
+-   `r fn_list("expm1()", "base::expm1()", "math")` computes $exp(x) - 1$ accurately also for $|x| << 1$.
+
+## Trigonometric functions
+
+-   `r fn_list("cos()", "base::cos()", "math")`, `r fn_list("sin()", "base::sin()", "math")`, `r fn_list("tan()", "base::tan()", "math")`
+
+-   `r fn_list("cospi()", "base::cospi()", "math")`, `r fn_list("sinpi()", "base::sinpi()", "math")`, `r fn_list("tanpi()", "base::tanpi()", "math")` compute the cos, sin or tan of $\pi \cdot x$. Note thant `tanpi(0.5)` is `NaN` (not a number).
+
+-   `r fn_list("acos()", "base::acos()", "math")`, `r fn_list("asin()", "base::asin()", "math")`, `r fn_list("atan()", "base::atan()", "math")` for inverse cos, sin and tan
+
+-   `r fn_list("atan2()", "base::atan2()", "math")` returns the angle between the x-axis and the vector from the origin to (x, y). For positive values, `atan2(y, x) == atan(y/x)`.
+
+-   `r fn_list("cosh()", "base::cosh()", "math")`, `r fn_list("sinh()", "base::sinh()", "math")`, `r fn_list("tanh()", "base::tanh()", "math")` hyperbolic cos, sin and tan.
+
+-   `r fn_list("acosh()", "base::acosh()", "math")`, `r fn_list("asinh()", "base::asinh()", "math")`, `r fn_list("atanh()", "base::atanh()", "math")` hyperbolic arc-cos, arc-sin and arc-tan (inverse).
+
+## Min, max, range
+
+-   `r fn_list("min()", "base::min()", "math")` the minimum in a set of numbers
+
+-   `r fn_list("max()", "base::max()", "math")` the maximum in a set of numbers
+
+-   `r fn_list("range()", "base::range()", "math")` the range (two numbers representing the minimum and maximum)
+
+-   `r fn_list("pmin()", "base::pmin()", "math")` the "parallel" minimum in a series of vectors
+
+-   `r fn_list("pmax()", "base::pmax()", "math")` the "parallel" maximum in a series of vectors
+
+-   `r fn_list("pmin_int()", "base::pmin.int()", "math", "snake_case version of pmin.int()")` a faster version of `pmin()` that drop all attributes
+
+-   `r fn_list("pmax_int()", "base::pmax.int()", "math", "snake_case version of pmax.int()")` a faster version of `pmax()` that drop all attributes
+
+-   `r fn_list("cummin()", "base::cummin()", "math")` the cumulative min
+
+-   `r fn_list("cummax()", "base::cummax()", "math")` the cumulative max
+
+## Sum and product functions
+
+-   `r fn_list("sum()", "base::sum()", "math")` the sum of its arguments
+
+-   `r fn_list("prod()", "base::prod()", "math")` the product of its arguments
+
+-   `r fn_list("cumsum()", "base::cumsum()", "math")` the cumulative sum
+
+-   `r fn_list("cumprod()", "base::cumprod()", "math")` the cumulative product
+
+## Factorial, beta, gamma and related functions
+
+-   `r fn_list("factorial()", "base::factorial()", "math")`, `r fn_list("lfactorial()", "base::lfactorila()", "math")` are the factorial of a number $!x$ and the natural logarithm of the factorial. They are also respectively `gamma(x + 1)` and `lgamme(x + 1)` (see here under)
+
+-   `r fn_list("choose()", "base::choose()", "math")`, `r fn_list("lchoose()", "base::lchoose()", "math")` are the binomial coefficients and the natural logarithms of their absolute values. The binomial coefficient is $\frac{!n}{!k \cdot !(n-k)}$. It is also the number of possible combinations of *n* numbers taken \$k\* times. `r fn_list("combn()", "utils::combn()", "distri")` return all the possible *k* combinations of *n* items.
+
+-   `r fn_list("beta()", "base::beta()", "math")`, `r fn_list("lbeta()", "base::lbeta()", "math")` the beta function $B(a,b) = \frac{\Gamma(a)\Gamma(b)}{\Gamma(a+b)}$ and natural logarithm of the beta function
+
+-   `r fn_list("gamma()", "base::gamma()", "math")`, `r fn_list("lgamma()", "base::lgamma()", "math")` the gamma function $\Gamma(x) = \int_0^\infty t^{x-1} e^{-t} dt$ and natural logarithm of the gamma function
+
+-   `r fn_list("digamma()", "base::digamma()", "math")`, `r fn_list("trigamma()", "base::trigamma()", "math")` are the first and second derivatives of the logarithm of the gamma function. `r fn_list("psigamma()", "base::psigamma()", "math")` is the n-th derivative of digamma.

@@ -1,0 +1,9 @@
+# Introduction
+
+R [@R] is a "language and environment for statistical computing". It is inspired from the S language and represents its Open Source counterpart that is now widely used (S is not much used yet). A big part of its success is a wide community of users and contributors. Hence, CRAN <https://cran.r-project.org> distributes almost 20,000 additional R packages (installable items that provide additional features to R).
+
+As rich as it is, the R ecosystem is not the easiest one for a beginner. Python is often considered as easier and more coherent. Yet, R was designed from the ground up to focus on data analysis, by limiting the exposition to technical aspect of computing. For instance, there are only two types of numeric values in base R: one integer (technically, Int32) and one floating point numeric value (Float64) where many computing languages expose 10 or more different representations of numbers. However, to maintain its rich ecosystem, base R is very conservative. So, there are various aspects that makes it look old. Also, freedom is the rule. You can basically design functions in R the way you like. But this freedom means that it is more difficult for the users to master the different paradigms that are implemented.
+
+There are often several different way to do something in R and there is even no convention on the name of functions. Hence, you find camelCase, snake_case or dot.case names and it is often hard to remind which one was use for which function (also, the dot has a special meaning in R for S3 objects that does not play well with the dot.case, but that is another story).
+
+So, would it be possible to cook a dialect of R that is as close as possible to base R, but that makes more homogeneous naming of function, more coherent user interface and that mixes base R with some of the best ideas you can find on CRAN? We believe so, and the SciViews::R dialect is the result of such a work.

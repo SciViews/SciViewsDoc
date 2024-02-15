@@ -1,0 +1,27 @@
+# Complex numbers
+
+```{r, include=FALSE}
+source("functions.R")
+```
+
+Complex numbers are not very often used in statistics, but R provides the **complex** class and a series of functions to manipulate it, just in case you would need it.
+
+A complex number is entered by using `i` inside a number, like `0i` or `1i + 2`. Basic operators like `+`, `-`, `*`, `/` and `^` work on complex numbers. In additions, there are:
+
+-   `r fn_list("complex()", "base::complex()", "complex")` to construct a vector of complex numbers by assembling its real and imaginary parts
+
+-   `r fn_list("as.complex()", "base::as.complex()", "complex")` to coerce numbers into complex numbers
+
+-   `r fn_list("is.complex()", "base::is.complex()", "complex")` to check if a name contains complex numbers
+
+-   `r fn_list("Re()", "base::Re()", "complex")` extract the real part of complex numbers
+
+-   `r fn_list("Im()", "base::Im()", "complex")` extract the imaginary part of complex numbers
+
+-   `r fn_list("Mod()", "base::Mod()", "complex")` returns the modulus
+
+-   `r fn_list("Arg()", "base::Arg()", "complex")` returns the argument of complex numbers
+
+-   `r fn_list("Conj()", "base::Conj()", "complex")` returns the conjugate of complex numbers
+
+-   `r fn_list("NA_complex_", "base::NA_complex_", "complex")` missing value in a vector of complex numbers

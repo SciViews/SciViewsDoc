@@ -1,0 +1,137 @@
+# Logicals and comparisons
+
+```{r, include=FALSE}
+source("functions.R")
+library(rlang)
+```
+
+**Logical** values (also named "booleans", or just "logicals") can take three values only:
+
+-   `r fn_list("TRUE", "base::TRUE", "logical")`
+
+-   `r fn_list("FALSE", "base::FALSE", "logical")`
+
+-   `r fn_list("NA", "base::NA", "logical")`
+
+They are produced by **comparison** instruction, for instance:
+
+```{r}
+x <- 1:4
+x < 3 # Return a vector of logical values
+```
+
+## Comparisons
+
+Vectors of **logical**s are obtained directly from **comparison** instructions by using these operators:
+
+-   `r fn_list("==", "base::==", "logical")` for equality (**note the double equal sign**; simple equal sign is used in assignation or argument = value construct), ex.: `x <- 2; x == 1`
+
+-   `r fn_list("!=", "base::!=", "logical")` for inequality, ex.: `x <- 2; x != 1`
+
+-   `r fn_list("<", "base::<", "logical")` for lower than, ex.: `x <- 2; x < 1`
+
+-   `r fn_list(">", "base::>", "logical")` for higher than, ex.: `x <- 2; x > 1`
+
+-   `r fn_list("<=", "base::<=", "logical")` for lower or equal, ex.: `x <- 2; x <= 1`
+
+-   `r fn_list(">=", "base::>=", "logical")` for higher or equal, ex.: `x <- 2; x >= 1`
+
+Always keep in mind that R (like any computer language) is not capable of representing all real numbers accurately. Most of them are approximated to their closest possible value. Since numbers are rounded when they are printed, this is not visible usually. For instance, you may be surprised by this:
+
+```{r}
+0.1 + 0.1 + 0.1 == 0.3
+```
+
+In fact, 0.1 cannot be represented exactly. Here it is with many more digits than what R usually displays:
+
+```{r}
+print(0.1, digits = 22)
+```
+
+... and the same for 0.3:
+
+```{r}
+print(0.3, digits = 22)
+```
+
+So, now, you understand why 0.1 + 0.1 + 0.1 is not **strictly equal** to 0.3. With real numbers, you should use the **near equality** test with `r fn_list("all_equal()", "base::all.equal()", "logical")` (but that function returns a single logical value for the whole vector):
+
+```{r}
+all_equal(0.1 + 0.1 + 0.1, 0.3)
+```
+
+There is also `r fn_list("identical", "base::identical", "logical")` that tests if two objects are strictly identical. In chapter XXX, you will discover **attributes**, and there is a function the check near equality specifically in attributes also: `r fn_list("attr_all_equal", "base::attr.all.equal", "logical")`.
+
+TODO: `%==%` and `%!=%` that are vectorized.
+
+## Combining or reworking comparisons
+
+Several comparisons can be combined with:
+
+-   `r fn_list("&", "base::&", "logical")` for "and", ex.: `x <- 2; x > 1 & x < 4`
+
+-   `r fn_list("|", "base::|", "logical")` for "or", ex.: `x <- 2; x < 1 | x > 4`
+
+-   `r fn_list("xor()", "base::xor()", "logical")` for element-wise exclusive OR (one element is `TRUE`, the other is `FALSE`), ex.: `xor(0:3, 3:0)`
+
+-   `r fn_list("&&", "base::&&", "logical")` for non-vectorised "and" with scalar logicals (length one vector) than returns a single logical value. In case of longer vectors, only the first element is used and a warning is issued, ex.: `c(TRUE, FALSE) && TRUE`, compare to `c(TRUE, FALSE) & TRUE`
+
+-   `r fn_list("||", "base::||", "logical")` for non-vectorised "or" than returns a single logical value (see `&&`), ex.: `TRUE || FALSE`, `FALSE || TRUE`, but `FALSE || FALSE`
+
+-   `r fn_list("!", "base::!", "logical")` for "not", the negation that turns `TRUE` into `FALSE` and `FALSE` into `TRUE`, ex.: `!TRUE`, `!c(FALSE, TRUE)`
+
+-   `r fn_list("all()", "base::all()", "logical")` that returns a single logical if items in a vector are all `TRUE`, ex: `x <- 1:4; all(x < 5); all(x < 3)`
+
+-   `r fn_list("any()", "base::any()", "logical")` that returns a single logical if at least one item in a vector is `TRUE`, ex: `x <- 1:4; any(x > 5); any(x < 3)`
+
+-   `r fn_list("is_true()", "base::isTRUE()", "logical")` that checks if its argument is exactly `TRUE` (a scalar, that is, a vector of length one), ex. `is_true(TRUE)`, but `is_true(c(TRUE, TRUE))` and `is_true(FALSE)`, `is_true(NA)`
+
+-   `r fn_list("is_false()", "base::isFALSE()", "logical")` that checks if its argument is exactly `FALSE` (a scalar, that is, a vector of length one), ex.: `is_false(FALSE)`
+
+## Coercion to and from logicals
+
+**Coercion** is the automatic conversion from one type to the other. It occurs whenever objects are involved in comparison.
+
+-   `r fn_list("as.logical()", "base::as.logical()", "logical")` to force convert anything into **logical**. For **numeric** values zeros are converted into `FALSE` and anything else except missing values are converted into `TRUE`. Missing values `NA` or `NaN` are converted into logical `NA`s.
+
+```{r}
+as.logical(c(0, 1, -1, 12.45, NA, NaN, Inf))
+```
+
+-   `r fn_list("is.logical()", "base::is.logical()", "logical")` checks that an object is **logical**, ex.: `is.logical(c(TRUE, FALSE))`
+
+-   `r fn_list("logical()", "base::logical()", "logical")` creates a vector of **logical** values of a given length (its values are initialized to `FALSE`), ex.: `logical(3)`
+
+-   `r fn_list("lgl()", "rlang::lgl()", "logical")` **concatenates** individual values or vectors into a logical vector. Arguments can be logical, or integer, but not numerical values with decimals or text:
+
+```{r}
+lgl(TRUE, FALSE, NA, 1, 0, c(5, 0, 6))
+```
+
+-   **Logical**s can be converted into **integer**s: `TRUE` is converted into `1L`, `FALSE` into `0L` and `NA` into `NA_integer_` (simply `NA`). This can be used to count the number of times there is a `TRUE` value in a **logical** vector by using `sum()` on it, which is a shortcut for `sum(as.integer(<lgl>))`:
+
+```{r}
+sum(c(TRUE, FALSE, NA, TRUE, FALSE), na.rm = TRUE)
+```
+
+-   Coercion/conversion of **character** strings into **logical** produces `TRUE` for `"TRUE"`, `"True"`, `"true"`, or `"T"`; `FALSE` for `"FALSE"`, `"False"`, `"false"`, or `"F"`, and `NA` for any other string or missing values:
+
+```{r}
+as.logical(c("TRUE", "False", "true", "F", "yes", "NO", "1"))
+```
+
+## From SciViews::R to R
+
+-   Packages used: {base}, {rlang}.
+
+SciViews::R function --\> R function[^logical-1]:
+
+[^logical-1]: SciViews::R function \\\~\\\~\\\> R function for non strict equivalence.
+
+-   `all_equal()` --\> `all.equal()`
+
+-   `attr_all_equal()` --\> `attr.all.equal()`
+
+-   `is_false()` --\> `isFALSE()`
+
+-   `is_true()` --\> `isTRUE()`
