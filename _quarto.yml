@@ -3,23 +3,39 @@ project:
 
 book:
   title: "SciViews::R"
-  author: "Philippe Grosjean"
-  date: "2023-07-25"
+  subtitle: "An R Dialect for Data Science"
+  date: 2023-07-25
+  author:
+    - name: Philippe Grosjean
+      email: "philippe.grosjean@umons.ac.be & phgrosjean@sciviews.org"
+      url: https://phgrosjean.sciviews.org
+      affiliation: "University of Mons, Belgium"
+      affiliation-url: "https://econum.umons.ac.be"
   chapters:
     - index.qmd
     - 01intro.qmd
-    - 02usingr.qmd
-    - 03basics.qmd
-    - 04math.qmd
-    - 05logical.qmd
-    - 06character.qmd
-    - 07objects.qmd
-    - 08subset.qmd
-    - 09replace.qmd
-    - 99miscellaneous.qmd
+    - part: "**Basics**"
+      chapters:
+        - 02usingr.qmd
+        - 03basics.qmd
+        - 04math.qmd
+        - 05logical.qmd
+        - 06character.qmd
+        - 07objects.qmd
+    - part: "**Data manipulation**"
+      chapters:
+        - 08subset.qmd
+        - 09replace.qmd
     - references.qmd
+  appendices:
+    - Amiscellaneous.qmd
+  sidebar:
+    style: docked
+    background: light
+  license: "CC BY-SA-NC 4.0"
   favicon: logo.png
   search: true
+  page-navigation: true
   site-url: https://wp.sciviews.org/SciViewsDoc/
   repo-url: https://github.com/SciViews/SciViewsDoc/
   repo-actions: [edit, issue, source]
@@ -31,18 +47,30 @@ comments:
   hypothesis: true
 
 bibliography: references.bib
-
+csl: 'evolutionary-biology.csl'
 
 format:
   html:
     theme:
-      light: flatly
-      dark: darkly
-    code-tools: true
+      light: material
+      dark: cyborg
+    linkcolor: '#a80039'
+    monofont: FiraCode-Regular, JetBrainsMono-Regular, Menlo, Consolas, monospace
+    monobackgroundcolor: '#eeeeee'
+    fig-cap-location: bottom
+    tbl-cap-location: top
+    highlight-style: atom-one
+    code-tools: false
     code-copy: true
+    code-fold: false
+    code-link: false
+    code-line-numbers: true
+    code-overflow: wrap
     default-image-extension: svg
+    lang: en
     number-depth: 3
-    toc-depth: 4
+    toc-depth: 2
+    cover-image: cover.png
   pdf:
     documentclass: scrreprt
     papersize: A4
@@ -55,7 +83,10 @@ format:
       text: |
         \printindex
   epub: 
-    default-image-extension: svg
+    default-image-extension: png
+    cover-image: "cover-epub.png"
 
 editor: visual
 
+# atom-one style is a little bit too light in dark mode. Also code is not nice
+# and we need alternate version of figures for dark mode

@@ -1,0 +1,9 @@
+version: 0.1.0
+
+svbox: svbox2023
+sciviewsbox: "SciViews Box 2023"
+
+affiliation:
+  institution: "University of Mons, Belgium"
+  institute: "Complexys and Infortech"
+  department: "Numerical Ecology"

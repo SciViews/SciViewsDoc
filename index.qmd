@@ -1,9 +1,99 @@
 # Preface {.unnumbered}
 
-This book presents SciViews::R, an R dialect that is intended to make the R language more accessible. It also list functions that make part of the language and indicate where they diverge from base R, Tidyverse, or other additions to plain R.
+This book presents SciViews::R, an R dialect that is intended to make the R language more accessible. It also lists functions that make part of the language and indicate where they diverge from base R, tidyverse, or other additions to plain R.
+
+------------------------------------------------------------------------
+
+::: callout-warning
+This is version {{< var version >}}. **It is still work in progress and largely incomplete.**
+:::
+
+<!--# Can use callout note, tip, warning, caution, and important -->
 
 ```{r, include=FALSE}
 if (!"SciViews:R" %in% search())
   source("R/SciViews.R", attach(NULL, name = "SciViews:R"))
 fn_clear()
 ```
+
+## Conventions
+
+Keyboard shortcuts are specific to the system where you read this text in HTML format. So, if they differ between Windows, macOS or Linux, be aware that you see only the version the fits your system. For instance, to create a new R script in RStudio, press {{< kbd mac=Shift-Command-N win=Shift-Control-N linux=Shift-Ctrl-N >}}.
+
+When there is a comparison between SciViews::R code with base and/or tidyverse syntax, the variants are prensented in tabs like this:
+
+::: {.content-visible when-format="html"}
+
+:::: panel-tabset
+
+## SciViews::R
+
+```{r mtcars_sv, eval=FALSE}
+SciViews::R
+mtcars <- read("mtcars", package = 'datasets')
+{
+  .= mtcars
+  .= smutate(., cyl <- as.ordered(cyl))
+  .= sselect(., .rownames, mpg:hp)
+} -> mtcars2
+mtcars2
+```
+
+## Base R
+
+```{r mtcars_r, eval=FALSE}
+data(mtcars)
+mtcars$cyl <- as.ordered(mtcars$cyl)
+mtcars2 <- mtcars[, c("mpg", "cyl", "disp", "hp")]
+mtcars2
+```
+
+## Tidyverse
+
+```{r mtcars_tidy, eval=FALSE}
+data(mtcars)
+library(dplyr)
+mtcars2 <- mtcars |>
+  mutate(cyl = as.ordered(cyl)) |>
+  select(mpg:hp)
+mtcars2
+```
+::::
+
+:::
+
+::: {.content-visible unless-format="html"}
+
+**SciViews::R**
+
+```{r mtcars_sv2, eval=FALSE}
+SciViews::R
+mtcars <- read("mtcars", package = 'datasets')
+{
+  .= mtcars
+  .= smutate(., cyl <- as.ordered(cyl))
+  .= sselect(., .rownames, mpg:hp)
+} -> mtcars2
+mtcars2
+```
+
+**Base R**
+
+```{r mtcars_r2, eval=FALSE}
+data(mtcars)
+mtcars$cyl <- as.ordered(mtcars$cyl)
+mtcars2 <- mtcars[, c("mpg", "cyl", "disp", "hp")]
+mtcars2
+```
+
+**Tidyverse**
+
+```{r mtcars_tidy2, eval=FALSE}
+data(mtcars)
+library(dplyr)
+mtcars2 <- mtcars |>
+  mutate(cyl = as.ordered(cyl)) |>
+  select(mpg:hp)
+mtcars2
+```
+:::
