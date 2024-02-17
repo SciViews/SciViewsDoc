@@ -71,9 +71,9 @@ myvar <- 'Sepal.Length'
 i(., 'Species', myvar)
 
 # To return a range, like in dplyr
-dplyr::select(iris, Species:Petal.Length, Sepal.Length)
+dplyr::select(iris, Species:Petal.Length, Sepal.Length) |> head()
 # or mixing ranges and single names
-dplyr::select(iris, Species:Petal.Length, 'Sepal.Length')
+dplyr::select(iris, Species:Petal.Length, 'Sepal.Length') |> head()
 
 i(., 'Sepal.Length') %:% 'Petal.Length'
 # ... or in inverse order

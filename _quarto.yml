@@ -52,28 +52,54 @@ csl: 'evolutionary-biology.csl'
 format:
   html:
     theme:
-      light: material
-      dark: cyborg
-    linkcolor: '#a80039'
+      light: [material, theme-light.scss]
+      dark: [cyborg, theme-dark.scss]
     monofont: FiraCode-Regular, JetBrainsMono-Regular, Menlo, Consolas, monospace
-    monobackgroundcolor: '#eeeeee'
     fig-cap-location: bottom
     tbl-cap-location: top
     highlight-style: atom-one
     code-tools: false
     code-copy: true
     code-fold: false
-    code-link: false
-    code-line-numbers: true
+    code-link: true
+    code-line-numbers: false
     code-overflow: wrap
+    code-block-border-left: "#a80039"
+    code-block-bg: true
+    citations-hover: true
+    footnotes-hover: true
+    crossrefs-hover: false
+    link-external-icon: true
+    link-external-newwindow: true
+    link-external-filter: '^(?:http:|https:)\/\/wp\.sciviews\.org'
     default-image-extension: svg
     lang: en
     number-depth: 3
-    toc-depth: 2
+    toc-depth: 3
+    toc-expand: 3
+    tod-title: Contents
+    smooth-scroll: true
     cover-image: cover.png
   pdf:
     documentclass: scrreprt
+    toc: true
+    toc-depth: 3
+    #lof: true
+    #lot: true
+    number-sections: true
+    number-depth: 3
+    colorlinks: true
+    code-block-border-left: "#a80039"
+    code-block-bg: "#f4f4f4"
+    highlight-style: printing
     papersize: A4
+    lang: en
+    geometry:
+      - top=20mm
+      - bottom=30mm
+      - left=20mm
+      - right=20mm
+      - heightrounded
     default-image-extension: pdf
     include-in-header: 
       text: |
@@ -85,8 +111,6 @@ format:
   epub: 
     default-image-extension: png
     cover-image: "cover-epub.png"
+    lang: en
 
 editor: visual
-
-# atom-one style is a little bit too light in dark mode. Also code is not nice
-# and we need alternate version of figures for dark mode
