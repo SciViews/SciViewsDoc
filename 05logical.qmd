@@ -61,7 +61,7 @@ So, now, you understand why 0.1 + 0.1 + 0.1 is not **strictly equal** to 0.3. Wi
 all_equal(0.1 + 0.1 + 0.1, 0.3)
 ```
 
-There is also `r fn_list("identical", "base::identical", "logical")` that tests if two objects are strictly identical. In chapter XXX, you will discover **attributes**, and there is a function the check near equality specifically in attributes also: `r fn_list("attr_all_equal", "base::attr.all.equal", "logical")`.
+There is also `r fn_list("identical()", "base::identical()", "logical")` that tests if two objects are strictly identical. In chapter XXX, you will discover **attributes**, and there is a function the check near equality specifically in attributes also: `r fn_list("attr_all_equal()", "base::attr.all.equal()", "logical")`.
 
 TODO: `%==%` and `%!=%` that are vectorized.
 
@@ -125,9 +125,9 @@ as.logical(c("TRUE", "False", "true", "F", "yes", "NO", "1"))
 
 -   Packages used: {base}, {rlang}.
 
-SciViews::R function --\> R function[^logical-1]:
+SciViews::R function --\> R function[^05logical-1]:
 
-[^logical-1]: SciViews::R function \\\~\\\~\\\> R function for non strict equivalence.
+[^05logical-1]: SciViews::R function \~\~\> R function for non strict equivalence.
 
 -   `all_equal()` --\> `all.equal()`
 

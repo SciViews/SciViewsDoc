@@ -44,7 +44,43 @@ fn_list <- function(svr, r = svr, cat = "", comment = "Same syntax") {
     fn_write(fns)
   }
   fns <<- fns
-  paste0("`", svr, "`")
+  #idx <- sub("\\(\\)", "", svr)
+  idx <- svr
+  # Special cases
+  idx <- switch(idx,
+    "=" = "assignment",
+    "<-" = "assignment",
+    "->" = "assignment",
+    "<<-" = "superassignment",
+    "->>" = "superassignment",
+    ":" = "sequence",
+    "+" = "addition",
+    "-" = "subtraction",
+    "*" = "multiplication",
+    "%*%" = "matrix multiplication",
+    "/" = "division",
+    "%/%" = "integer division",
+    "%%" = "modulo",
+    "^" = "exponentiation",
+    "==" = "equality",
+    "!=" = "difference",
+    "<" = "smaller than",
+    ">" = "greater than",
+    "<=" = "smaller or equal",
+    ">=" = "greater or equal",
+    "%in%" = "inclusion",
+    "!" = "negation",
+    "|" = "or elementwise",
+    "||" = "or",
+    "&" = "and elementwise",
+    "&&" = "and",
+    "$" = "extract",
+    idx
+  )
+  idx <- gsub("%", "\\\\%", idx)
+  idx <- gsub("\\$", "\\\\$", idx)
+  idx <- gsub("_", "\\\\_", idx)
+  paste0("`", svr, "`\\index{", idx,"}")
 }
 
 

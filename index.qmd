@@ -1,6 +1,6 @@
 # Preface {.unnumbered}
 
-This book presents SciViews::R, an R dialect that is intended to make the R language more accessible.
+This book presents SciViews::R, an R dialect that is intended to make the R language more accessible. It also list functions that make part of the language and indicate where they diverge from base R, Tidyverse, or other additions to plain R.
 
 ```{r, include=FALSE}
 if (!"SciViews:R" %in% search())

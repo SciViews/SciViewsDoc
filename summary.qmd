@@ -1,3 +1,0 @@
-# Summary
-
-This book presents the SciViews::R dialect in a concise way. It mainly list functions that make part of the language and indicate where they diverge from base R, Tidyverse, or other additions to plain R.

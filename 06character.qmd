@@ -1,0 +1,20 @@
+# Text and character
+
+```{r, include=FALSE}
+if (!"SciViews:R" %in% search())
+  source("R/SciViews.R", attach(NULL, name = "SciViews:R"))
+```
+
+Text manipulation is required both for the processing of textual data and to convey textual messages to or from the user.
+
+Text is usually double quoted: `"this is some text"`. If you need to include a double quote in a text string, escape it with a backslash like `"Some text with \"double quote\" in it"`. You can also use simple quotes: `'Text with simple quotes do not dee to escape "double quote".'`.
+
+Text strings are also contained in vectors in R and they are called **character**. There is a large set of function to manipulate **character** vectors and strings. The most important ones are:
+
+-   `r fn_list("character()", "base::character()", "character")` to construct a vector of empty character strings of a given length
+
+-   `r fn_list("as.character()", "base::as.character()", "character")` to coerce objects into character vectors
+
+-   `r fn_list("is.character()", "base::is.character()", "character")` to check if a symbol is bind to a character vector
+
+-   `r fn_list("NA_character_", "base::NA_character_", "character")` missing value in a vector of characters

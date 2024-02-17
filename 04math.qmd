@@ -103,10 +103,34 @@ Math operations are crucial for statistical computing. The way you do math in R 
 
 -   `r fn_list("factorial()", "base::factorial()", "math")`, `r fn_list("lfactorial()", "base::lfactorila()", "math")` are the factorial of a number $!x$ and the natural logarithm of the factorial. They are also respectively `gamma(x + 1)` and `lgamme(x + 1)` (see here under)
 
--   `r fn_list("choose()", "base::choose()", "math")`, `r fn_list("lchoose()", "base::lchoose()", "math")` are the binomial coefficients and the natural logarithms of their absolute values. The binomial coefficient is $\frac{!n}{!k \cdot !(n-k)}$. It is also the number of possible combinations of *n* numbers taken \$k\* times. `r fn_list("combn()", "utils::combn()", "distri")` return all the possible *k* combinations of *n* items.
+-   `r fn_list("choose()", "base::choose()", "math")`, `r fn_list("lchoose()", "base::lchoose()", "math")` are the binomial coefficients and the natural logarithms of their absolute values. The binomial coefficient is $\frac{!n}{!k \cdot !(n-k)}$. It is also the number of possible combinations of *n* numbers taken $k$ times. `r fn_list("combn()", "utils::combn()", "distri")` return all the possible *k* combinations of *n* items.
 
 -   `r fn_list("beta()", "base::beta()", "math")`, `r fn_list("lbeta()", "base::lbeta()", "math")` the beta function $B(a,b) = \frac{\Gamma(a)\Gamma(b)}{\Gamma(a+b)}$ and natural logarithm of the beta function
 
 -   `r fn_list("gamma()", "base::gamma()", "math")`, `r fn_list("lgamma()", "base::lgamma()", "math")` the gamma function $\Gamma(x) = \int_0^\infty t^{x-1} e^{-t} dt$ and natural logarithm of the gamma function
 
 -   `r fn_list("digamma()", "base::digamma()", "math")`, `r fn_list("trigamma()", "base::trigamma()", "math")` are the first and second derivatives of the logarithm of the gamma function. `r fn_list("psigamma()", "base::psigamma()", "math")` is the n-th derivative of digamma.
+
+## Complex numbers
+
+Complex numbers are not very often used in statistics, but R provides the complex class and a series of functions to manipulate it, just in case you would need it.
+
+A complex number is entered by using `i` inside a number, like `0i` or `1i + 2`. Basic operators like `+`, `-`, `*`, `/` and `^` work on complex numbers. In additions, there are:
+
+-   `r fn_list("complex()", "base::complex()", "complex")` to construct a vector of complex numbers by assembling its real and imaginary parts
+
+-   `r fn_list("as.complex()", "base::as.complex()", "complex")` to coerce numbers into complex numbers
+
+-   `r fn_list("is.complex()", "base::is.complex()", "complex")` to check if a name contains complex numbers
+
+-   `r fn_list("Re()", "base::Re()", "complex")` extract the real part of complex numbers
+
+-   `r fn_list("Im()", "base::Im()", "complex")` extract the imaginary part of complex numbers
+
+-   `r fn_list("Mod()", "base::Mod()", "complex")` returns the modulus
+
+-   `r fn_list("Arg()", "base::Arg()", "complex")` returns the argument of complex numbers
+
+-   `r fn_list("Conj()", "base::Conj()", "complex")` returns the conjugate of complex numbers
+
+-   `r fn_list("NA_complex_", "base::NA_complex_", "complex")` missing value in a vector of complex numbers

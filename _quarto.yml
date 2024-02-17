@@ -7,26 +7,55 @@ book:
   date: "2023-07-25"
   chapters:
     - index.qmd
-    - intro.qmd
-    - summary.qmd
-    - commandline.qmd
-    - basics.qmd
-    - math.qmd
-    - logical.qmd
-    - complex.qmd
-    - miscellaneous.qmd
+    - 01intro.qmd
+    - 02usingr.qmd
+    - 03basics.qmd
+    - 04math.qmd
+    - 05logical.qmd
+    - 06character.qmd
+    - 07objects.qmd
+    - 08subset.qmd
+    - 09replace.qmd
+    - 99miscellaneous.qmd
     - references.qmd
+  favicon: logo.png
+  search: true
+  site-url: https://wp.sciviews.org/SciViewsDoc/
+  repo-url: https://github.com/SciViews/SciViewsDoc/
+  repo-actions: [edit, issue, source]
+  downloads: [pdf, epub]
+  sharing: [twitter, facebook]
+  twitter-card: true
+  
+comments:
+  hypothesis: true
 
 bibliography: references.bib
 
+
 format:
   html:
-    theme: cosmo
+    theme:
+      light: flatly
+      dark: darkly
+    code-tools: true
+    code-copy: true
     default-image-extension: svg
+    number-depth: 3
+    toc-depth: 4
   pdf:
     documentclass: scrreprt
     papersize: A4
     default-image-extension: pdf
+    include-in-header: 
+      text: |
+        \usepackage{makeidx}
+        \makeindex
+    include-after-body: 
+      text: |
+        \printindex
+  epub: 
+    default-image-extension: svg
 
 editor: visual
 

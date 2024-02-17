@@ -1,0 +1,3 @@
+# Replacing and recoding
+
+Replacing items in vectors, matrices, lists or data objects...

@@ -1,0 +1,51 @@
+# Main objects
+
+We have already seen several R objects in the previous sections: vectors of various types and functions. In fact, *everything is an object* in R. In this section, we present the main objects to manipulate data.
+
+## Functions
+
+...
+
+## Vectors
+
+...
+
+### Logical
+
+...
+
+### Numbers
+
+This is **numeric** (**double** and **integer**) and **complex**.
+
+### Characters
+
+...
+
+### Factor and ordered
+
+...
+
+### Date and time
+
+...
+
+## Matrices and arrays
+
+...
+
+## Lists
+
+...
+
+## Dataframes
+
+...
+
+## Datatables
+
+...
+
+## Other objects
+
+...

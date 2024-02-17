@@ -1,11 +1,15 @@
-# Command line
+# Using R
 
 ```{r, include=FALSE}
 if (!"SciViews:R" %in% search())
   source("R/SciViews.R", attach(NULL, name = "SciViews:R"))
 ```
 
-R can be used in different way, but it is generally used interactively at the **command line**. Being in Rgui (Windows), R.app (MacOS), a terminal, RStudio, VScode, ... you can interact with an R process in a question and answer way. R shows that it is ready to process next instruction by a **prompt** at the beginning of a line (\>). You enter the instruction on one or several lines. In this case, the prompt changes into (+) to show that R waits for more. Once the instruction is complete, it is processed by R and the result is printed in the console, or has side-effects, like creating a plot, for instance. Then R goes back to the prompt and is ready for next instruction.
+R can be used in different way, but it is generally used interactively at the **command line**\index{command line}. We will thus discover this computing language by interacting at a **console** or **terminal** that uses the command line interface.
+
+## Command line
+
+Being in Rgui (Windows), R.app (MacOS), a terminal, RStudio, VScode ... you can interact with an R process in a question and answer way. R shows that it is ready to process next instruction by a **prompt** at the beginning of a line (\>). You enter the instruction on one or several lines. In this case, the prompt changes into (+) to show that R waits for more. Once the instruction is complete, it is processed by R and the result is printed in the console, or has side-effects, like creating a plot, for instance. Then R goes back to the prompt and is ready for next instruction.
 
 For instance, this is a simple session in R:
 
@@ -36,8 +40,8 @@ res1
 You can also use so-called *non-syntactically correct* names if you enclose them inside backticks "\`":
 
 ```{r}
-`+non syntactically correct name$` <- 1 + 2
-`+non syntactically correct name$`
+`+non syntactically correct name` <- 1 + 2
+`+non syntactically correct name`
 ```
 
-Next section will present basic math operators.
+Next section will present describe the rudiments of the R language.

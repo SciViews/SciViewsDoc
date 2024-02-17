@@ -1,0 +1,3 @@
+# Subsetting
+
+Subsetting is the process of selecting a subset of the data.

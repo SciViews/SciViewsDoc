@@ -95,3 +95,13 @@ get_s3_method('mean', 'default')
 ## Sets
 
 ## Units
+
+## Branching
+
+Describe here if, while, repeat, for.
+
+## Syntactic sugar
+
+Describe here {, (, pipe, dot list, invisible...
+
+Next section will present basic math operators.
