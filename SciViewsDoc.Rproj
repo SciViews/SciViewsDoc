@@ -1,4 +1,5 @@
 Version: 1.0
+ProjectId: 630d5e77-2748-4f0e-b9d2-e61a60b83cb8
 
 RestoreWorkspace: No
 SaveWorkspace: No
@@ -20,4 +21,4 @@ QuitChildProcessesOnExit: Yes
 
 MarkdownCanonical: No
 
-SpellingDictionary: en_US
+SpellingDictionary: fr_FR

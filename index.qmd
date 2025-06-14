@@ -20,7 +20,7 @@ fn_clear()
 
 Keyboard shortcuts are specific to the system where you read this text in HTML format. So, if they differ between Windows, macOS or Linux, be aware that you see only the version the fits your system. For instance, to create a new R script in RStudio, press {{< kbd mac=Shift-Command-N win=Shift-Control-N linux=Shift-Ctrl-N >}}.
 
-When there is a comparison between SciViews::R code with base and/or tidyverse syntax, the variants are prensented in tabs like this:
+When there is a comparison between SciViews::R code with base and/or tidyverse syntax, the variants are presented in tabs like this:
 
 :::: {.content-visible when-format="html"}
 ::: {.panel-tabset group="variants"}
