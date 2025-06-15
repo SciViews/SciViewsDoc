@@ -18,7 +18,7 @@ fn_clear()
 
 ## Conventions
 
-Keyboard shortcuts are specific to the system where you read this text in HTML format. So, if they differ between Windows, macOS or Linux, be aware that you see only the version the fits your system. For instance, to create a new R script in RStudio, press {{< kbd mac=Shift-Command-N win=Shift-Control-N linux=Shift-Ctrl-N >}}.
+Keyboard shortcuts are specific to the system where you read this book in HTML format. They slightly differ between Windows, macOS or Linux. Notably, Windows and Linux use {{< kbd Control >}} where macOS uses {{< kbd Command >}} for most equivalent shortcuts. Be aware that you see here only the version of the shortcut that fits your system. For instance, to create a new R script in RStudio, press {{< kbd mac=Shift-Command-N win=Shift-Control-N linux=Shift-Ctrl-N >}}.
 
 When there is a comparison between SciViews::R code with base and/or tidyverse syntax, the variants are presented in tabs like this:
 
@@ -29,11 +29,11 @@ When there is a comparison between SciViews::R code with base and/or tidyverse s
 ```{r mtcars_sv, eval=FALSE}
 SciViews::R
 mtcars <- read("mtcars", package = 'datasets')
-{
+mtcars2 <- {
   .= mtcars
-  .= smutate(., cyl <- as.ordered(cyl))
+  .= smutate(., cyl = as.ordered(cyl))
   .= sselect(., .rownames, mpg:hp)
-} -> mtcars2
+} |> local()
 mtcars2
 ```
 
@@ -65,11 +65,11 @@ mtcars2
 ```{r mtcars_sv2, eval=FALSE}
 SciViews::R
 mtcars <- read("mtcars", package = 'datasets')
-{
+mtcars2 <- {
   .= mtcars
-  .= smutate(., cyl <- as.ordered(cyl))
+  .= smutate(., cyl = as.ordered(cyl))
   .= sselect(., .rownames, mpg:hp)
-} -> mtcars2
+} |> local()
 mtcars2
 ```
 
