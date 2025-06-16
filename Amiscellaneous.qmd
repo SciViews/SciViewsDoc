@@ -32,6 +32,49 @@ This mechanism is used in this book (and it also loads a bunch of additional fun
 
 The tidyselect mechanism extends the selection of variables in a data frame beyond base R. However, it is only restricted to tidy functions ans it uses non standard evaluation. Here we design a similar interface, but that is useable everywhere and that use standard evaluation (you have to quote names).
 
+## Why NOT using a spreadsheet?
+
+Spreadsheets like Microsoft Excel or LibreOffice Calc are widely used in sciences. They are even (ab)used for doing statistics. Why is it so? In fact, a spreadsheet is not the most intuitive way to do calculations at first sight (need an example here comparing simple calculations done with a pocket calculator, Excel and R), but once one understands the strange approach of automatically recalculated formulas arranged in 2D, it gives the impression of unlimited power in your hands. Also, it is the GUI with the lowest abstraction level: no variables with names you immediately forgot to hold your data, just a "combat naval" like arrangement of the calls like A1, B5, etc. (here also, give an example).
+
+However, spreadsheets are really shining for entering small data sets in tables and to associate only very simple calculations or graphs around them. Once the calculations become a little bit more complex, the spreadsheet becomes rapidly unreadable, impossible to debug and to manage on the long term. So, what to use then? Well, programming languages... and that's the main problem: a scientist that learned how to use a spreadsheet will tend to push it as far as possible (too far) but will be very reluctant to learn a programming language instead.
+
+A particularly problematic field is statistical analyses. Spreadsheets can do a little bit of statistics, but they do it very badly. Two reasons for that:
+
+-   Statistics often involve large datasets, and the size of the data is in the range that makes a spreadsheet less easy to manage,
+
+-   For obscure reasons, most spreadsheets (with the exception of Gnumeric) are relatively sloppy at coding statistical functions: bad pseudo-random generators, errors in calculations that are never corrected, non robust algorithms for things as simple as calculation of a standard error, and finally, graphs that target sexy presentations but violate many basic rules for good and understandable statistical graphs.
+
+Given this situation, we really believe that learning a general scientific programming language like R, Matlab, Julia or Python is definitely a requirement for scientists. In complement, we need also to convince them that using spreadsheets for doing their calculations/statistics is really a bad idea. The latter is the purpose of this document. Here, we collect a series of bad aspects about spreadsheets.
+
+### Spreadsheets are less easy to manage and debug
+
+-   A 2D arrangement of formulas together with a complex and obscure algorithm to determine the order of recalculation leads to difficulty to understand and view the whole calculation
+-   A large spreadsheet file with many tabs is pretty unreadable. Color coding the tabs for say: green is printer-friendly, blue is tables where you enter data, red is support material or other tricks only exists to try to cope with that inherent complexity... but the fact is there: yes, your problem is definitely too large to be treated with a spreadsheet. With R, for instance, you could arrange your calculation in custom functions, collected in packages. Then, the whole calculation (no mater its complexity) resumes into a linear script of a couple or a few dozens of lines. With languages that are designed to be as close as possible to math like R (and thus pretty readable), you can read and understand what a script is doing almost as easy as your read a good book, once you are a little bit used to the syntax of the language.
+-   Sloppy arrangement of data and calculation leads to a mess, unless one is very disciplined. Poor segregation of the data (give example with data inside formulas, and with data and formulas mixed and poor presentation of the data table). Poor documentation of the spreadsheet (notes and text cells are there... but nowhere as convenient and easy to read as comments in a code).
+-   The "now its here; now its not" is sometimes a name given to a bad practice coming from one of the most powerful feature of spreadsheet: the powerful "what if?" capabilities of well-designed spreadsheet. You can change one value and get all the rest immediately recalculated. However, in this case, you never see the initial and modified scenarios together. Often, taking a decision involve comparing different scenarios... that the spreadsheet arrangement simply do not promote!
+-   Misuse of hidden colums/rows.
+-   Spreadsheet results are rarely "presentation ready". So, you need to rearrange them and the time required for this step would have been much better used in learning your next programming language to get the same results!
+-   Encourage separation of data and calculation, documentation of reference sources, use tabs, check computation, and make a summary design for communication and presentation, label your data for more readable formulas, use matrix calculation, use more linear presentation of the calculation to ease its understanding and debugging... =\> the perfect spreadsheet is a ... R script!
+-   Illustration of the worse use of a spreadsheet: add two numbers together!
+-   "Obviously, there is something about spreadsheets that tempts everyone to be lazy" (and the same can be said for, say Word or PowerPoint).
+-   To write a spreadsheet IS programming... "such programming has meant that results can be shown on the PC screen in spatial, visual way that the average person can easily view and understand".
+-   No error checking mechanisms in spreadsheets.
+-   Automatic conversion of some text into dates (give an example)
+
+### Patrick Burns' Spreadsheet addiction
+
+It is [here](https://www.burns-stat.com/documents/tutorials/spreadsheet-addiction/), Patrick Burns' own critics of (ab)using spreadsheets.
+
+-   "The technology acceptance model holds that there are two main factors that determine the uptake of a technology: the perceived usefulness and the perceived ease-of-use. Perception need not to correspond to reality". Perception of usefulness of spreadsheets is often misleading, because it is very easy to get an answer... but it is not obvious that it is often more difficult to get the correct answer!
+
+-   There is also an overestimation of the difficulty to use a programming language instead of a spreadsheet to get the right answer.
+
+-   Patrick Burns summarizes this: "the hard way looks easy, the easy way looks hard".
+
+-   There is long list of stupid and amazing tings you can do with Excel!
+
+## Various stuff - to be sorted
+
 TODO : the following chunk must be sorted out !
 
 ```{r}
