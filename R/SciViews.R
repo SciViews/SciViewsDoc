@@ -106,3 +106,9 @@ is_false <- aka(base::isFALSE)
 #  !all.equal(x, y)
 #}
 get_s3_method <- aka(utils::getS3method)
+
+library(cli)
+ansi_num_colors <- aka(cli::num_ansi_colors)
+ansi_combine_styles <- aka(cli::combine_ansi_styles)
+ansi_make_style <- aka(cli::make_ansi_style)
+ansi_truecolor <- aka(cli::truecolor)

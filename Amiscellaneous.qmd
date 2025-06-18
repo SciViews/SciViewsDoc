@@ -2,6 +2,8 @@
 
 This section contains various material (mostly work in progress) that is not yet incorporated in other sections of this book.
 
+> Everything that **exists** is an object. Everything that **happens** is a function call (John, Chambers)
+
 ## Temporary "aka" function for SciViews::R
 
 One of the goals of SciViews::R is to provide a consistent naming convention based on snake case. R is quite liberal on the way function should be named. Consequently, almost all the possible conventions are used (snake_case, camelCase, PascalCase, .dotcane, lowercase...) It is not easy to remember the name of function in this context. SciViews::R tries to put that in order by generalizing snake_case, which implies the creation of a lot os synonym names for existing R functions, or "aka"s. These "aka"s are collected together in a script like this one :

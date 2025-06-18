@@ -26,6 +26,9 @@ book:
       chapters:
         - 08subset.qmd
         - 09replace.qmd
+    - part: "**Advanced topics**"
+      chapters:
+        - 10cli.qmd
     - references.qmd
   appendices:
     - Amiscellaneous.qmd

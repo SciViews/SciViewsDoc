@@ -9,7 +9,7 @@ Math operations are crucial for statistical computing. The way you do math in R 
 
 ## Main math operators
 
--   `r fn_list("+", "+", "math", "addition (binary or unary)")` the addition operator or the unary pls sign in front of a number like +3
+-   `r fn_list("+", "+", "math", "addition (binary or unary)")` the addition operator or the unary plus sign in front of a number like +3
 
 -   `r fn_list("-", "-", "math", "subtraction (binary or unary)")` the subtraction operator, or the unary minus sign before a number, like -3
 
