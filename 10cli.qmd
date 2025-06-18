@@ -33,201 +33,201 @@ cat("Text", col_red("in red"), "here\n")
 
 ### Text color
 
--   `r fn_list("col_black", "cli::col_black", "cli", "Colorize text in black (ANSI)")` colorize text in black
+-   `r fn_list("col_black()", "cli::col_black()", "cli", "Colorize text in black (ANSI)")` colorize text in black
 
--   `r fn_list("col_blue", "cli::col_blue", "cli", "Colorize text in blue (ANSI)")` colorize text in blue
+-   `r fn_list("col_blue()", "cli::col_blue()", "cli", "Colorize text in blue (ANSI)")` colorize text in blue
 
--   `r fn_list("col_cyan", "cli::col_cyan", "cli", "Colorize text in cyan (ANSI)")` colorize text in cyan
+-   `r fn_list("col_cyan()", "cli::col_cyan()", "cli", "Colorize text in cyan (ANSI)")` colorize text in cyan
 
--   `r fn_list("col_green", "cli::col_green", "cli", "Colorize text in green (ANSI)")` colorize text in green
+-   `r fn_list("col_green()", "cli::col_green()", "cli", "Colorize text in green (ANSI)")` colorize text in green
 
--   `r fn_list("col_magenta", "cli::col_magenta", "cli", "Colorize text in magenta (ANSI)")` colorize text in magenta
+-   `r fn_list("col_magenta()", "cli::col_magenta()", "cli", "Colorize text in magenta (ANSI)")` colorize text in magenta
 
--   `r fn_list("col_red", "cli::col_red", "cli", "Colorize text in red (ANSI)")` colorize text in red
+-   `r fn_list("col_red()", "cli::col_red()", "cli", "Colorize text in red (ANSI)")` colorize text in red
 
--   `r fn_list("col_white", "cli::col_white", "cli", "Colorize text in white (ANSI)")` colorize text in white
+-   `r fn_list("col_white()", "cli::col_white()", "cli", "Colorize text in white (ANSI)")` colorize text in white
 
--   `r fn_list("col_yellow", "cli::col_yellow", "cli", "Colorize text in yellow (ANSI)")` colorize text in yellow
+-   `r fn_list("col_yellow()", "cli::col_yellow()", "cli", "Colorize text in yellow (ANSI)")` colorize text in yellow
 
--   `r fn_list("col_grey", "cli::col_grey", "cli", "Colorize text in grey (ANSI)")` colorize text in grey
+-   `r fn_list("col_grey()", "cli::col_grey()", "cli", "Colorize text in grey (ANSI)")` colorize text in grey
 
--   `r fn_list("col_silver", "cli::col_silver", "cli", "Colorize text in silver (ANSI)")` colorize text in silver
+-   `r fn_list("col_silver()", "cli::col_silver()", "cli", "Colorize text in silver (ANSI)")` colorize text in silver
 
--   `r fn_list("col_br_black", "cli::col_br_black", "cli", "Colorize text in bright black (ANSI)")` colorize text in bright black
+-   `r fn_list("col_br_black()", "cli::col_br_black()", "cli", "Colorize text in bright black (ANSI)")` colorize text in bright black
 
--   `r fn_list("col_br_blue", "cli::col_br_blue", "cli", "Colorize text in bright blue (ANSI)")` colorize text in bright blue
+-   `r fn_list("col_br_blue()", "cli::col_br_blue()", "cli", "Colorize text in bright blue (ANSI)")` colorize text in bright blue
 
--   `r fn_list("col_br_cyan", "cli::col_br_cyan", "cli", "Colorize text in bright cyan (ANSI)")` colorize text in bright cyan
+-   `r fn_list("col_br_cyan()", "cli::col_br_cyan()", "cli", "Colorize text in bright cyan (ANSI)")` colorize text in bright cyan
 
--   `r fn_list("col_br_green", "cli::col_br_green", "cli", "Colorize text in bright green (ANSI)")` colorize text in bright green
+-   `r fn_list("col_br_green()", "cli::col_br_green()", "cli", "Colorize text in bright green (ANSI)")` colorize text in bright green
 
--   `r fn_list("col_br_magenta", "cli::col_br_magenta", "cli", "Colorize text in bright magenta (ANSI)")` colorize text in bright magenta
+-   `r fn_list("col_br_magenta()", "cli::col_br_magenta()", "cli", "Colorize text in bright magenta (ANSI)")` colorize text in bright magenta
 
--   `r fn_list("col_br_red", "cli::col_br_red", "cli", "Colorize text in bright red (ANSI)")` colorize text in bright red
+-   `r fn_list("col_br_red()", "cli::col_br_red()", "cli", "Colorize text in bright red (ANSI)")` colorize text in bright red
 
--   `r fn_list("col_br_white", "cli::col_br_white", "cli", "Colorize text in bright white (ANSI)")` colorize text in bright white
+-   `r fn_list("col_br_white()", "cli::col_br_white()", "cli", "Colorize text in bright white (ANSI)")` colorize text in bright white
 
--   `r fn_list("col_br_yellow", "cli::col_br_yellow", "cli", "Colorize text in bright yellow (ANSI)")` colorize text in bright yellow
+-   `r fn_list("col_br_yellow()", "cli::col_br_yellow()", "cli", "Colorize text in bright yellow (ANSI)")` colorize text in bright yellow
 
--   `r fn_list("col_none", "cli::col_none", "cli", "Do not colorize text (ANSI)")` does not colorize text (default terminal color)
+-   `r fn_list("col_none()", "cli::col_none()", "cli", "Do not colorize text (ANSI)")` does not colorize text (default terminal color)
 
 ### Background color
 
--   `r fn_list("bg_black", "cli::bg_black", "cli", "Colorize background in black (ANSI)")` colorize background in black
+-   `r fn_list("bg_black()", "cli::bg_black()", "cli", "Colorize background in black (ANSI)")` colorize background in black
 
--   `r fn_list("bg_blue", "cli::bg_blue", "cli", "Colorize background in blue (ANSI)")` colorize background in blue
+-   `r fn_list("bg_blue()", "cli::bg_blue()", "cli", "Colorize background in blue (ANSI)")` colorize background in blue
 
--   `r fn_list("bg_cyan", "cli::bg_cyan", "cli", "Colorize background in cyan (ANSI)")` colorize background in cyan
+-   `r fn_list("bg_cyan()", "cli::bg_cyan()", "cli", "Colorize background in cyan (ANSI)")` colorize background in cyan
 
--   `r fn_list("bg_green", "cli::bg_green", "cli", "Colorize background in green (ANSI)")` colorize background in green
+-   `r fn_list("bg_green()", "cli::bg_green()", "cli", "Colorize background in green (ANSI)")` colorize background in green
 
--   `r fn_list("bg_magenta", "cli::bg_magenta", "cli", "Colorize background in magenta (ANSI)")` colorize background in magenta
+-   `r fn_list("bg_magenta()", "cli::bg_magenta()", "cli", "Colorize background in magenta (ANSI)")` colorize background in magenta
 
--   `r fn_list("bg_red", "cli::bg_red", "cli", "Colorize background in red (ANSI)")` colorize background in red
+-   `r fn_list("bg_red()", "cli::bg_red()", "cli", "Colorize background in red (ANSI)")` colorize background in red
 
--   `r fn_list("bg_white", "cli::bg_white", "cli", "Colorize background in white (ANSI)")` colorize background in white
+-   `r fn_list("bg_white()", "cli::bg_white()", "cli", "Colorize background in white (ANSI)")` colorize background in white
 
--   `r fn_list("bg_yellow", "cli::bg_yellow", "cli", "Colorize background in yellow (ANSI)")` colorize background in yellow
+-   `r fn_list("bg_yellow()", "cli::bg_yellow()", "cli", "Colorize background in yellow (ANSI)")` colorize background in yellow
 
--   `r fn_list("bg_br_black", "cli::bg_br_black", "cli", "Colorize background in bright black (ANSI)")` colorize background in bright black
+-   `r fn_list("bg_br_black()", "cli::bg_br_black()", "cli", "Colorize background in bright black (ANSI)")` colorize background in bright black
 
--   `r fn_list("bg_br_blue", "cli::bg_br_blue", "cli", "Colorize background in bright blue (ANSI)")` colorize background in bright blue
+-   `r fn_list("bg_br_blue()", "cli::bg_br_blue()", "cli", "Colorize background in bright blue (ANSI)")` colorize background in bright blue
 
--   `r fn_list("bg_br_cyan", "cli::bg_br_cyan", "cli", "Colorize background in bright cyan (ANSI)")` colorize background in bright cyan
+-   `r fn_list("bg_br_cyan()", "cli::bg_br_cyan()", "cli", "Colorize background in bright cyan (ANSI)")` colorize background in bright cyan
 
--   `r fn_list("bg_br_green", "cli::bg_br_green", "cli", "Colorize background in bright green (ANSI)")` colorize background in bright green
+-   `r fn_list("bg_br_green()", "cli::bg_br_green()", "cli", "Colorize background in bright green (ANSI)")` colorize background in bright green
 
--   `r fn_list("bg_br_magenta", "cli::bg_br_magenta", "cli", "Colorize background in bright magenta (ANSI)")` colorize background in bright magenta
+-   `r fn_list("bg_br_magenta()", "cli::bg_br_magenta()", "cli", "Colorize background in bright magenta (ANSI)")` colorize background in bright magenta
 
--   `r fn_list("bg_br_red", "cli::bg_br_red", "cli", "Colorize background in bright red (ANSI)")` colorize background in bright red
+-   `r fn_list("bg_br_red()", "cli::bg_br_red()", "cli", "Colorize background in bright red (ANSI)")` colorize background in bright red
 
--   `r fn_list("bg_br_white", "cli::bg_br_white", "cli", "Colorize background in bright white (ANSI)")` colorize background in bright white
+-   `r fn_list("bg_br_white()", "cli::bg_br_white()", "cli", "Colorize background in bright white (ANSI)")` colorize background in bright white
 
--   `r fn_list("bg_br_yellow", "cli::bg_br_yellow", "cli", "Colorize background in bright yellow (ANSI)")` colorize background in bright yellow
+-   `r fn_list("bg_br_yellow()", "cli::bg_br_yellow()", "cli", "Colorize background in bright yellow (ANSI)")` colorize background in bright yellow
 
--   `r fn_list("bg_none", "cli::bg_none", "cli", "Do not colorize background (ANSI)")` does not colorize background (default terminal background color)
+-   `r fn_list("bg_none()", "cli::bg_none()", "cli", "Do not colorize background (ANSI)")` does not colorize background (default terminal background color)
 
 ### Text styling
 
--   `r fn_list("style_dim", "cli::style_dim", "cli", "Dim style (ANSI)")` style the font in dim mode
+-   `r fn_list("style_dim()", "cli::style_dim()", "cli", "Dim style (ANSI)")` style the font in dim mode
 
--   `r fn_list("style_blurred", "cli::style_blurred", "cli", "Blurred = dim style (ANSI)")` style the font in blurred = dim mode
+-   `r fn_list("style_blurred()", "cli::style_blurred()", "cli", "Blurred = dim style (ANSI)")` style the font in blurred = dim mode
 
--   `r fn_list("style_bold", "cli::style_bold", "cli", "Bold style (ANSI)")` style the font in bold mode
+-   `r fn_list("style_bold()", "cli::style_bold()", "cli", "Bold style (ANSI)")` style the font in bold mode
 
--   `r fn_list("style_hidden", "cli::style_hidden", "cli", "Hidden style (ANSI)")` style the font in hidden mode
+-   `r fn_list("style_hidden()", "cli::style_hidden()", "cli", "Hidden style (ANSI)")` style the font in hidden mode
 
--   `r fn_list("style_inverse", "cli::style_inverse", "cli", "Inverse style (ANSI)")` style the font in inverse mode
+-   `r fn_list("style_inverse()", "cli::style_inverse()", "cli", "Inverse style (ANSI)")` style the font in inverse mode
 
--   `r fn_list("style_italic", "cli::style_italic", "cli", "Italic style (ANSI)")` style the font in italic mode (not widely supported)
+-   `r fn_list("style_italic()", "cli::style_italic()", "cli", "Italic style (ANSI)")` style the font in italic mode (not widely supported)
 
--   `r fn_list("style_strikethrough", "cli::style_strikethrough", "cli", "Strikethrough style (ANSI)")` style the font in strikethrough mode (not widely supported)
+-   `r fn_list("style_strikethrough()", "cli::style_strikethrough()", "cli", "Strikethrough style (ANSI)")` style the font in strikethrough mode (not widely supported)
 
--   `r fn_list("style_underline", "cli::style_underline", "cli", "Underline style (ANSI)")` style the font in underline mode
+-   `r fn_list("style_underline()", "cli::style_underline()", "cli", "Underline style (ANSI)")` style the font in underline mode
 
--   `r fn_list("style_no_dim", "cli::style_no_dim", "cli", "Stop dim style (ANSI)")` style the font by stopping dim mode
+-   `r fn_list("style_no_dim()", "cli::style_no_dim()", "cli", "Stop dim style (ANSI)")` style the font by stopping dim mode
 
--   `r fn_list("style_no_blurred", "cli::style_no_blurred", "cli", "Stop blurred style (ANSI)")` style the font by stopping blurred mode
+-   `r fn_list("style_no_blurred()", "cli::style_no_blurred()", "cli", "Stop blurred style (ANSI)")` style the font by stopping blurred mode
 
--   `r fn_list("style_no_bold", "cli::style_no_bold", "cli", "Stop bold style (ANSI)")` style the font by stopping bold mode
+-   `r fn_list("style_no_bold()", "cli::style_no_bold()", "cli", "Stop bold style (ANSI)")` style the font by stopping bold mode
 
--   `r fn_list("style_no_hidden", "cli::style_no_hidden", "cli", "Stop hidden style (ANSI)")` style the font by stopping hidden mode
+-   `r fn_list("style_no_hidden()", "cli::style_no_hidden()", "cli", "Stop hidden style (ANSI)")` style the font by stopping hidden mode
 
--   `r fn_list("style_no_inverse", "cli::style_no_inverse", "cli", "Stop style (ANSI)")` style the font by stopping inverse mode
+-   `r fn_list("style_no_inverse()", "cli::style_no_inverse()", "cli", "Stop style (ANSI)")` style the font by stopping inverse mode
 
--   `r fn_list("style_no_italic", "cli::style_no_italic", "cli", "Stop italic style (ANSI)")` style the font by stopping italic mode
+-   `r fn_list("style_no_italic()", "cli::style_no_italic()", "cli", "Stop italic style (ANSI)")` style the font by stopping italic mode
 
--   `r fn_list("style_no_strikethrough", "cli::style_no_strikethrough", "cli", "Stop strikethrough style (ANSI)")` style the font by stopping strikethrough mode
+-   `r fn_list("style_no_strikethrough()", "cli::style_no_strikethrough()", "cli", "Stop strikethrough style (ANSI)")` style the font by stopping strikethrough mode
 
--   `r fn_list("style_no_underline", "cli::style_no_underline", "cli", "Stop underline style (ANSI)")` style the font by stopping underline mode
+-   `r fn_list("style_no_underline()", "cli::style_no_underline()", "cli", "Stop underline style (ANSI)")` style the font by stopping underline mode
 
--   `r fn_list("style_reset", "cli::style_reset", "cli", "Remove styles including colors (ANSI)")` remove font styles including colors
+-   `r fn_list("style_reset()", "cli::style_reset()", "cli", "Remove styles including colors (ANSI)")` remove font styles including colors
 
 ### Functions for color and style manipulation
 
--   `r fn_list("ansi_num_colors", "cli::num_ansi_colors", "cli", "How many colors the (ANSI) terminal supports?")` determine if the terminal supports colors, and if so, returns how many colors it can display
+-   `r fn_list("ansi_num_colors()", "cli::num_ansi_colors()", "cli", "How many colors the (ANSI) terminal supports?")` determine if the terminal supports colors, and if so, returns how many colors it can display
 
--   `r fn_list("ansi_combine_styles", "cli::combine_ansi_styles", "cli", "Combine ANSI styles")` combine ANSI styles
+-   `r fn_list("ansi_combine_styles()", "cli::combine_ansi_styles()", "cli", "Combine ANSI styles")` combine ANSI styles
 
--   `r fn_list("ansi_make_style", "cli::make_ansi_style", "cli", "Create an ANSI style?")` create a new ANSI style
+-   `r fn_list("ansi_make_style()", "cli::make_ansi_style()", "cli", "Create an ANSI style?")` create a new ANSI style
 
 -   `r fn_list("ansi_truecolor", "cli::truecolor", "cli", "Create an ANSI style?")` integer constant for the the number of 24 bit ANSI colors
 
 -   `r fn_list("ansi_palettes", "cli::ansi_palettes", "cli", "Data frame with predefined ANSI palettes")` a data frame with predefined ANSI palettes
 
--   `r fn_list("ansi_palette_show", "cli::ansi_palette_show", "cli", "Display an ANSI palette")` display an ANSI palette
+-   `r fn_list("ansi_palette_show()", "cli::ansi_palette_show()", "cli", "Display an ANSI palette")` display an ANSI palette
 
 ### Functions for text presentation
 
--   `r fn_list("ansi_align", "cli::ansi_align", "cli", "Align ANSI strings")` align ANSI strings
+-   `r fn_list("ansi_align()", "cli::ansi_align()", "cli", "Align ANSI strings")` align ANSI strings
 
--   `r fn_list("ansi_columns", "cli::ansi_columns", "cli", "Align ANSI strings into columns")` align ANSI strings into columns
+-   `r fn_list("ansi_columns()", "cli::ansi_columns()", "cli", "Align ANSI strings into columns")` align ANSI strings into columns
 
--   `r fn_list("ansi_html", "cli::ansi_html", "cli", "Convert ANSI strings into HTML")` convert ANSI strings into HTML
+-   `r fn_list("ansi_strwrap()", "cli::ansi_strwrap()", "cli", "Wrap an ANSI string")` wrap an ANSI string to a certain width
 
--   `r fn_list("ansi_html_styles", "cli::ansi_html_styles", "cli", "CSS styles for ansi_html()")` define CSS styles for `ansi_html()`
+-   `r fn_list("ansi_html()", "cli::ansi_html()", "cli", "Convert ANSI strings into HTML")` convert ANSI strings into HTML
+
+-   `r fn_list("ansi_html_styles()", "cli::ansi_html_styles()", "cli", "CSS styles for ansi_html()")` define CSS styles for `ansi_html()`
 
 ### Text manipulation functions that are aware of ANSI codes
 
 TODO: names should match corresponding st_xxx() functions nmaes in SciViews::R
 
--   `r fn_list("ansi_chartr", "cli::ansi_chartr", "cli", "Translate character in a string")` translate characters in a string
+-   `r fn_list("ansi_chartr()", "cli::ansi_chartr()", "cli", "Translate character in a string")` translate characters in a string
 
--   `r fn_list("ansi_toupper", "cli::ansi_toupper", "cli", "Turn a string into uppercase")` turn a string into uppercase
+-   `r fn_list("ansi_toupper()", "cli::ansi_toupper()", "cli", "Turn a string into uppercase")` turn a string into uppercase
 
--   `r fn_list("ansi_tolower", "cli::ansi_tolower", "cli", "Turn a string into lowercase")` turn a string into lowercase
+-   `r fn_list("ansi_tolower()", "cli::ansi_tolower()", "cli", "Turn a string into lowercase")` turn a string into lowercase
 
--   `r fn_list("ansi_strtrim", "cli::ansi_strtrim", "cli", "Trim an ANSI string")` trim an ANSI string
+-   `r fn_list("ansi_strtrim()", "cli::ansi_strtrim()", "cli", "Trim an ANSI string")` trim an ANSI string
 
--   `r fn_list("ansi_trimws", "cli::ansi_strtrimws", "cli", "Trim whitespaces in an ANSI string")` trim whitespaces in an ANSI string
+-   `r fn_list("ansi_trimws()", "cli::ansi_strtrimws()", "cli", "Trim whitespaces in an ANSI string")` trim whitespaces in an ANSI string
 
--   `r fn_list("ansi_strwrap", "cli::ansi_strwrap", "cli", "Wrap an ANSI string")` wrap an ANSI string to a certain width
+-   `r fn_list("ansi_strsplit()", "cli::ansi_strsplit()", "cli", "Split a string retaining ANSI formatings")` split a string, retaining its ANSI formatings in substrings
 
--   `r fn_list("ansi_strsplit", "cli::ansi_strsplit", "cli", "Split a string retaining ANSI formatings")` split a string, retaining its ANSI formatings in substrings
+-   `r fn_list("ansi_substr()", "cli::ansi_substr()", "cli", "Substring of an ANSI strings")` substring of an ANSI strings
 
--   `r fn_list("ansi_substr", "cli::ansi_substr", "cli", "Substring of an ANSI strings")` substring of an ANSI strings
+-   `r fn_list("ansi_substring()", "cli::ansi_substring()", "cli", "Substring of an ANSI strings")` substring of an ANSI strings (alternate version)
 
--   `r fn_list("ansi_substring", "cli::ansi_substring", "cli", "Substring of an ANSI strings")` substring of an ANSI strings (alternate version)
+-   `r fn_list("ansi_grep()", "cli::ansi_grep()", "cli", "Regular expressions search for ANSI strings")` regular expression search for ANSI strings
 
--   `r fn_list("ansi_grep", "cli::ansi_grep", "cli", "Regular expressions search for ANSI strings")` regular expression search for ANSI strings
+-   `r fn_list("ansi_grepl()", "cli::ansi_grepl()", "cli", "Logical regular expressions search for ANSI strings")` regular expression search for ANSI strings, returning a logical value
 
--   `r fn_list("ansi_grepl", "cli::ansi_grepl", "cli", "Logical regular expressions search for ANSI strings")` regular expression search for ANSI strings, returning a logical value
+-   `r fn_list("ansi_regex()", "cli::ansi_regex()", "cli", "Regular expression to find ANSI codes")` regular expression to find ANSI codes
 
--   `r fn_list("ansi_regex", "cli::ansi_regex", "cli", "Regular expression to find ANSI codes")` regular expression to find ANSI codes
+-   `r fn_list("ansi_has_any()", "cli::ansi_has_any()", "cli", "Check if string has ANSI code")` check if any ANSI code is in a string
 
--   `r fn_list("ansi_has_any", "cli::ansi_has_any", "cli", "Check if string has ANSI code")` check if any ANSI code is in a string
+-   `r fn_list("ansi_nchar()", "cli::ansi_nchar()", "cli", "Count character in an ANSI string")` count characters in an ANSI string
 
--   `r fn_list("ansi_nchar", "cli::ansi_nchar", "cli", "Count character in an ANSI string")` count characters in an ANSI string
+-   `r fn_list("ansi_nzchar()", "cli::ansi_nzchar()", "cli", "Check for non zero characters ANSI string")` check for non zero characters in an ANSI string
 
--   `r fn_list("ansi_nzchar", "cli::ansi_nzchar", "cli", "Check for non zero characters ANSI string")` check for non zero characters in an ANSI string
+-   `r fn_list("ansi_simplify()", "cli::ansi_simplify()", "cli", "Simplify an ANSI string")` simplify an ANSI string
 
--   `r fn_list("ansi_simplify", "cli::ansi_simplify", "cli", "Simplify an ANSI string")` simplify an ANSI string
+-   `r fn_list("ansi_string()", "cli::ansi_string()", "cli", "Convert a character string into a cli_ansi_string object")` convert a **character** string into a **cli_ansi_string** object
 
--   `r fn_list("ansi_string", "cli::ansi_string", "cli", "Convert a character string into a cli_ansi_string object")` convert a **character** string into a **cli_ansi_string** object
+-   `r fn_list("ansi_strip()", "cli::ansi_strip()", "cli", "Eliminate ANSI code from a string")` eliminate ANSI code in a string and convert it back to a **character** string (note: shouldn't it be `as.character()` instead?
 
--   `r fn_list("ansi_strip", "cli::ansi_strip", "cli", "Eliminate ANSI code from a string")` eliminate ANSI code in a string and convert it back to a **character** string (note: shouldn't it be `as.character()` instead?
-
--   `r fn_list("ansi_collapse", "cli::ansi_collapse", "cli", "Collapse strings into a single one")` collapse strings into a single one (similar to `glue_collapse()`)
+-   `r fn_list("ansi_collapse()", "cli::ansi_collapse()", "cli", "Collapse strings into a single one")` collapse strings into a single one (similar to `glue_collapse()`)
 
 ### Hyperlink support
 
 Only a few terminals support hyperlinks. For those in the list (e.g., RStudio, but not the mcOS terminal for instance), these functions are useful (warning, they are experimental, and not compatible with some of the other `ansi_xxx()` functions):
 
--   `r fn_list("style_hyperlink", "cli::style_hyperlink", "cli", "Insert an hyperlink in an ANSI string")` insert an hyperlink in an ANSI string
+-   `r fn_list("style_hyperlink()", "cli::style_hyperlink()", "cli", "Insert an hyperlink in an ANSI string")` insert an hyperlink in an ANSI string
 
--   `r fn_list("ansi_has_hyperlink_support", "cli::ansi_has_hyperlink_support", "cli", "Does the terminal support ANSI hyperlinks?")` check if the terminal supports ANSI hyperlinks
+-   `r fn_list("ansi_has_hyperlink_support()", "cli::ansi_has_hyperlink_support()", "cli", "Does the terminal support ANSI hyperlinks?")` check if the terminal supports ANSI hyperlinks
 
--   `r fn_list("ansi_hyperlink_types", "cli::ansi_has_hyperlink_types", "cli", "List the types of ANSI hyperlinks supported")` list the types of ANSI hyperlinks supported
+-   `r fn_list("ansi_hyperlink_types()", "cli::ansi_has_hyperlink_types()", "cli", "List the types of ANSI hyperlinks supported")` list the types of ANSI hyperlinks supported
 
 ### Cursor manipulation
 
 This only works in terminal emulators. It has no effects elsewhere.
 
--   `r fn_list("ansi_hide_cursor", "cli::ansi_hide_cursor", "cli", "Hide the cursor in the terminal")` hide the cursor in the terminal
+-   `r fn_list("ansi_hide_cursor()", "cli::ansi_hide_cursor()", "cli", "Hide the cursor in the terminal")` hide the cursor in the terminal
 
--   `r fn_list("ansi_show_cursor", "cli::ansi_show_cursor", "cli", "Show the cursor in the terminal")` show the cursor in the terminal
+-   `r fn_list("ansi_show_cursor()", "cli::ansi_show_cursor()", "cli", "Show the cursor in the terminal")` show the cursor in the terminal
 
--   `r fn_list("ansi_with_hidden_cursor", "cli::ansi_with_hidden_cursor", "cli", "Temporary hide the cursor in the terminal")` temporary hide the cursor in the terminal during the execution of an expression
+-   `r fn_list("ansi_with_hidden_cursor()", "cli::ansi_with_hidden_cursor()", "cli", "Temporary hide the cursor in the terminal")` temporary hide the cursor in the terminal during the execution of an expression
 
 ## Feedback and animations
 
