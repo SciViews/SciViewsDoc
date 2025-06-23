@@ -4,6 +4,37 @@ This section contains various material (mostly work in progress) that is not yet
 
 > Everything that **exists** is an object. Everything that **happens** is a function call (John, Chambers)
 
+## Equations with 'modelit'
+
+The 'modelit' package allows for extracting equations from models, and place them in a R Markdown or Quarto document. Here is an example:
+
+```{r, warning=FALSE}
+SciViews::R("infer", "model", lang = "en")
+iris <- read("iris", package = "datasets")
+# Plot
+chart(data = iris, sepal_length ~ petal_length) +
+  geom_point()
+# Model
+iris_lm <- lm(data = iris, sepal_length ~ petal_length)
+summary(iris_lm) |> tabularise()
+```
+
+Equation (@eq-test1):
+
+$$
+x^2 + y^3
+$$ {#eq-test1}
+
+Non parameterized equation of the model (@eq-nonpar):
+
+$$`r eq__(iris_lm)`$$ {#eq-nonpar}
+
+Parameterized equation of the same model (@eq-par):
+
+$$`r eq__(iris_lm, use_coefs = TRUE)`$$ {#eq-par}
+
+The only problem here is that we don't get a preview of these equations before rendering (how to solve this? Using a chunk that generates the whole \\\$\$...\$\\\${#eq-name} does not allow us to use cross-references easily).
+
 ## Temporary "aka" function for SciViews::R
 
 One of the goals of SciViews::R is to provide a consistent naming convention based on snake case. R is quite liberal on the way function should be named. Consequently, almost all the possible conventions are used (snake_case, camelCase, PascalCase, .dotcane, lowercase...) It is not easy to remember the name of function in this context. SciViews::R tries to put that in order by generalizing snake_case, which implies the creation of a lot os synonym names for existing R functions, or "aka"s. These "aka"s are collected together in a script like this one :
@@ -106,6 +137,7 @@ nn('Species')
 }
 
 # Example
+data(iris)
 .= iris
 i(., 'Petal.Length', 'Sepal.Length') # Returns the indices
 nm(., 'Petal.Length', 'Sepal.Length') # Returns the names (not much useful)

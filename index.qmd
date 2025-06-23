@@ -18,7 +18,7 @@ fn_clear()
 
 ## Conventions
 
-Keyboard shortcuts are specific to the system where you read this book in HTML format. They slightly differ between Windows, macOS or Linux. Notably, Windows and Linux use {{< kbd Control >}} where macOS uses {{< kbd Command >}} for most equivalent shortcuts. Be aware that you see here only the version of the shortcut that fits your system. For instance, to create a new R script in RStudio, press {{< kbd mac=Shift-Command-N win=Shift-Control-N linux=Shift-Ctrl-N >}}.
+Keyboard shortcuts are specific to the system where you read this book in HTML format. They slightly differ between Windows, macOS or Linux. Notably, Windows and Linux use {{< kbd Control >}} where macOS uses meterized {{< kbd Command >}} for most equivalent shortcuts. Be aware that you see here only the version of the shortcut that fits your system. For instance, to create a new R script in RStudio, press {{< kbd mac=Shift-Command-N win=Shift-Control-N linux=Shift-Ctrl-N >}}.
 
 When there is a comparison between SciViews::R code with base and/or tidyverse syntax, the variants are presented in tabs like this:
 
