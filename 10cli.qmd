@@ -17,11 +17,16 @@ TODO: explain prompt, continuation, basic formatting of answer, use of the histo
 
 Discuss the output std and err, {cli} and {fansi}...
 
-Terminal use **ANSI escape sequences** to send instructions to the terminal itself. It allows for font color or styling, for cursor movement, and other commands. The {cli} package inserts such sequences in strings, so that when you print them at a terminal using `cat()`, these commands take effect. Here are the functions you can use to control how your text outputs in a terminal using ANSI codes. You could insert ANSI escape sequences manually to get the same result, for instance:
+Terminal use **ANSI escape sequences** to send instructions to the terminal itself. It allows for font color or styling, for cursor movement, and other commands. The {cli} package inserts such sequences in strings, so that when you print them at a terminal using `cat()`, these commands take effect. Here are the functions you can use to control how your text outputs in a terminal using ANSI codes. You could insert ANSI escape sequences manually to get the same result, for instance (only works in the HTML version of the document, of course):
 
-```{r}
+```{r, eval=FALSE}
 #\033[39m change font color to red, and \033[39m resets it, so:
 cat("Text \033[31min red\033[39m here\n")
+```
+
+```{r, echo=FALSE}
+library(cli)
+cat("Text", col_red("in red"), "here\n")
 ```
 
 However, it is more convenient, more readable and less error-prone to use dedicated R functions that insert and manipulate the ANSI escape sequences for you. The same result is obtained with:
