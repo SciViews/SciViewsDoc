@@ -1,7 +1,7 @@
 "svr","r","cat","comment"
 "+","+","math","addition (binary or unary)"
 ":",":","ops","Same syntax"
-"mean()","base::mean(), collapse::mean()","summary","With argument na.rm = TRUE by default"
+"mean()","base::mean(), collapse::fmean()","summary","With argument na.rm = TRUE by default"
 "<-","<-","ops","Same syntax"
 "methods()","base::methods()","object","Same syntax"
 "get_s3_methods()","base::getS3methods()","object","Same syntax"

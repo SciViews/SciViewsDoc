@@ -11,7 +11,7 @@ R provides a rich working environment with lot of tools. In order to get everyth
 
 function
 
-:   A function in computer language performs one task in a separate unit of code. A function accepts zero or more **arguments** that passes variables and parameters and usually returns one object as a result. Most functions have no **side-effect**, that is, they modifies nothing in your computing environment. Some do, however, like printing a result, drawing a chart, changing a global option, writing in a file, ...
+:   A function in computer language performs one task in a separate unit of code. A function accepts zero or more **arguments** that passes variables and parameters and usually returns one object as a result. Most functions have no **side-effect**, that is, they modifies nothing in your computing environment. Some do, however, like printing a result, drawing a chart, changing a global option, writing in a file...
 
 functional language
 
@@ -34,7 +34,7 @@ x <- c(1, 4, 3.2, 6.3)
 var(x)
 ```
 
-Here, we provided one argument to `var()` : `x` , the numeric vector. The `var()` function has more arguments. One get a tip in RStudio, or VSCode, or one can rely on `args()` to see these arguments, or display the help page with `?var` to get even more information.
+Here, we provided one argument to `var()` : `x` , the numeric vector. The `var()` function has more arguments. One get a tip in RStudio, Positron or VSCode, or one can rely on `args()` to see these arguments, or display the help page with `?var` to get even more information.
 
 ```{r}
 args(var)
@@ -82,7 +82,7 @@ Here, we see that besides its first argument named `x` , there is a variable set
 methods(mean)
 ```
 
-We see that there is **default** method, as well as a series of others. Those with an asterisk (\*) are hidden and not directly accessible.
+We see that there is a **default** method, as well as a series of others. Those with an asterisk (\*) are hidden and not directly accessible.
 
 -   `r fn_list("get_s3_methods()", "base::getS3methods()", "object")` gets the code for a given S3 method (S3 is a type of R objects, see the objects chapter)
 

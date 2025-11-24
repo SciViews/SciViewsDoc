@@ -6,7 +6,7 @@ if (!"SciViews:R" %in% search())
 library(rlang)
 ```
 
-**Logical** values (also named "booleans", or just "logicals") can take three values only:
+**Logical** values (also named "booleans", or just "logicals") can take three values only in R:
 
 -   `r fn_list("TRUE", "base::TRUE", "logical")`
 

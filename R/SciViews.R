@@ -86,7 +86,7 @@ fn_list <- function(svr, r = svr, cat = "", comment = "Same syntax") {
 
 # SciViews::R aka functions -----------------------------------------------
 
-aka <- svMisc::aka
+aka <- svBase::aka
 
 all_equal <- aka(base::all.equal)
 all_names <- aka(base::all.names)
